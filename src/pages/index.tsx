@@ -17,4 +17,4 @@ export default function Home() {
       <h2 className="text-4xl text-red-600">Titleeads</h2>
     </div>
   );
-}
+} 
