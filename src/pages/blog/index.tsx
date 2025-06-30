@@ -1,10 +1,7 @@
-import Header from "@/components/Header/header";
-
 export default function Blog() {
   return (
-    <>
-      <Header />
-      <h1>blog</h1>
-    </>
+    <div className="h-screen flex flex-col items-center justify-center bg-black text-white">
+      <h1>Blog</h1>
+    </div>
   );
 }
