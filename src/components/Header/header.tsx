@@ -1,9 +1,8 @@
-import Link from "next/link";
 import React from "react";
 import { Button } from "../ui/button";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
 import { useRouter } from "next/router";
+import ActiveLink from "../ActiveLink";
 
 export default function Header() {
   const router = useRouter();
@@ -21,24 +20,9 @@ export default function Header() {
       />
 
       <nav className="flex items-center gap-6">
-        <Link
-          className={cn(
-            "font-medium transition-colors ease-in-out duration-300 hover:text-blue-400",
-            isHomePage ? "text-blue-600" : "text-white"
-          )}
-          href={"/"}
-        >
-          Início
-        </Link>
-        <Link
-          className={cn(
-            "font-medium transition-colors ease-in-out duration-300 hover:text-blue-400",
-            isBlogPage ? "text-blue-600" : "text-white"
-          )}
-          href={"/blog"}
-        >
-          Blog
-        </Link>
+        <ActiveLink href={"/"}>Início</ActiveLink>
+        <ActiveLink href={"/blog"}>Blog</ActiveLink>
+
         <Button variant={"secondary"} className="rounded-[999px]">
           Começar
         </Button>
