@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center gap-4 p-4 bg-black">
-      <Header />
+      <h1 className="text-white">Hello</h1>
     </div>
   );
 } 

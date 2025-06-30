@@ -3,6 +3,7 @@ import { Button } from "../ui/button";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import ActiveLink from "../ActiveLink";
+import Link from "next/link";
 
 export default function Header() {
   const router = useRouter();
@@ -23,8 +24,8 @@ export default function Header() {
         <ActiveLink href={"/"}>Início</ActiveLink>
         <ActiveLink href={"/blog"}>Blog</ActiveLink>
 
-        <Button variant={"secondary"} className="rounded-[999px]">
-          Começar
+        <Button variant={"secondary"} asChild>
+          <Link href={"/comecar"}>Começar</Link>
         </Button>
       </nav>
     </header>
