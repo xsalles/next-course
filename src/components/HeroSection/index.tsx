@@ -5,7 +5,7 @@ import { ArrowRight, Clock, Store } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="flex mt-36 items-center gap-14 justify-around">
+    <section className="flex mt-36 items-center gap-14 px-14 justify-between">
       <div className="flex flex-col items-start text-left gap-14">
         <div className="flex flex-col gap-8">
           <h1 className="text-white text-heading-hg max-w-[640px]">
@@ -38,8 +38,8 @@ export default function HeroSection() {
       <Image
         alt="Ilustração de imagem"
         src={"/illustration.png"}
-        width={471}
-        height={491}
+        width={500}
+        height={500}
       />
     </section>
   );
