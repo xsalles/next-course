@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { Button } from "../ui/button";
+import { Clock, Store } from "lucide-react";
 
 export default function HeroSection() {
   return (
@@ -12,23 +13,13 @@ export default function HeroSection() {
           </h1>
           <div className="flex flex-col gap-2">
             <div className="flex items-center gap-3">
-              <Image
-                src="/clock.svg"
-                alt="Pequeno ícone de um relógio"
-                width={20}
-                height={20}
-              />
+              <Clock width={20} height={20} className="text-cyan-100"/>
               <p className="text-body-md text-white">
                 Crie o seu site em menos de 5 minutos
               </p>
             </div>
             <div className="flex items-center gap-3">
-              <Image
-                src="/store.svg"
-                alt="Pequeno ícone de uma loja"
-                width={20}
-                height={20}
-              />
+              <Store width={20} height={20} className="text-cyan-100"/>
               <p className="text-body-md text-white">
                 Acompanhe e otimize seu negócio online
               </p>
