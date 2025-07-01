@@ -37,7 +37,7 @@ export default function HeroSection() {
       </div>
       <Image
         alt="Ilustração de imagem"
-        src={"/illustration.png"}
+        src={"/illustrationHero.png"}
         width={500}
         height={500}
       />
