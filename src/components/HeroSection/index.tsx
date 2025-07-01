@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 
 export default function HeroSection() {
   return (
-    <section className="flex mt-20 items-center gap-14 justify-around">
+    <section className="flex mt-36 items-center gap-14 justify-around">
       <div className="flex flex-col items-start text-left gap-14">
         <div className="flex flex-col gap-8">
           <h1 className="text-white text-heading-hg max-w-[640px]">
