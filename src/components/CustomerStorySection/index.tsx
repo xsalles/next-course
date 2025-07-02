@@ -6,7 +6,7 @@ export default function CustomerStorySection() {
     <section className="w-full flex items-center justify-center flex-col gap-12 py-[168px] bg-gray-800">
       <h4 className="text-white text-heading-xl">Quem ultiliza, aprova!</h4>
 
-      <div className="flex w-auto gap-6">
+      <div className="flex flex-col md:flex-row w-auto gap-6">
         <article className="text-white bg-gray-600 rounded-xl flex flex-col border border-gray-400 p-10 gap-10 w-[471px]">
           <p className="text-body-md italic">
             Criar minha loja com o site.set foi a melhor decisão para o meu

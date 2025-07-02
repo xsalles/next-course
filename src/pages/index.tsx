@@ -1,4 +1,5 @@
 import BenefitsSection from "@/components/BenefitsSection";
+import CtaSection from "@/components/CtaSection";
 import CustomerStorySection from "@/components/CustomerStorySection";
 import FeatureSection from "@/components/FeatureSection";
 import HeroSection from "@/components/HeroSection";
@@ -10,6 +11,7 @@ export default function Home() {
       <FeatureSection />
       <BenefitsSection />
       <CustomerStorySection />
+      <CtaSection />
     </>
   );
 }
