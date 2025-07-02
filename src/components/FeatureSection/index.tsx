@@ -5,8 +5,8 @@ import Image from "next/image";
 export default function FeatureSection() {
   return (
     <section className="p-14 flex flex-col gap-6">
-      <div className="flex gap-6 justify-between w-full">
-        <article className="flex flex-col text-left p-12 gap-4 bg-gray-400 rounded-xl w-6/12">
+      <div className="flex gap-6 flex-col md:flex-row justify-between w-full">
+        <article className="w-full flex flex-col text-left p-12 gap-4 bg-gray-400 rounded-xl md:w-6/12">
           <p className="bg-blue-400 text-blue-200 px-3 py-2 text-body-xs font-bold rounded-sm w-fit">
             SIMPLES
           </p>
@@ -15,7 +15,7 @@ export default function FeatureSection() {
           </h3>
         </article>
 
-        <article className="flex flex-col text-left p-12 gap-4 bg-gray-400 rounded-xl w-6/12">
+        <article className="w-full flex flex-col text-left p-12 gap-4 bg-gray-400 rounded-xl md:w-6/12">
           <p className="bg-blue-400 text-blue-200 px-3 py-2 text-body-xs font-bold rounded-sm w-fit">
             PRÁTICO
           </p>
@@ -25,8 +25,8 @@ export default function FeatureSection() {
         </article>
       </div>
 
-      <article className="flex items-center justify-between gap-6 p-12 bg-gray-400 rounded-xl">
-        <div className="flex flex-col items-start text-left gap-40">
+      <article className="flex flex-col md:flex-row items-center md:justify-between md:gap-6 p-12 bg-gray-400 rounded-xl">
+        <div className="flex flex-col items-start text-left gap-8 md:gap-40">
           <div className="flex flex-col gap-4">
             <p className="bg-blue-400 text-blue-200 px-3 py-2 text-body-xs font-bold rounded-sm w-fit">
               PERSONALIZÁVEL
@@ -35,7 +35,7 @@ export default function FeatureSection() {
               Tenha uma loja online personalizada com a cara da sua marca
             </h3>
           </div>
-          <Button className="rounded-full">
+          <Button className="rounded-full w-full md:w-fit">
             Criar loja grátis
             <ArrowRight />
           </Button>
@@ -46,6 +46,7 @@ export default function FeatureSection() {
           src={"/illustrationFeature.png"}
           width={400}
           height={400}
+          className="hidden md:flex"
         />
       </article>
     </section>

@@ -3,11 +3,11 @@ import React from "react";
 
 export default function CustomerStorySection() {
   return (
-    <section className="w-full flex items-center justify-center flex-col gap-12 py-[168px] bg-gray-800">
+    <section className="flex items-center justify-center flex-col gap-12 py-[168px] bg-gray-800 p-4">
       <h4 className="text-white text-heading-xl">Quem ultiliza, aprova!</h4>
 
-      <div className="flex flex-col md:flex-row w-auto gap-6">
-        <article className="text-white bg-gray-600 rounded-xl flex flex-col border border-gray-400 p-10 gap-10 w-[471px]">
+      <div className="flex flex-col md:flex-row w-full gap-6 p-3 justify-center">
+        <article className="text-white bg-gray-600 rounded-xl flex flex-col border border-gray-400 p-10 gap-10 w-full md:w-[471px]">
           <p className="text-body-md italic">
             Criar minha loja com o site.set foi a melhor decisão para o meu
             negócio. A plataforma é super intuitiva, e consegui colocar meus
@@ -27,7 +27,7 @@ export default function CustomerStorySection() {
             </div>
           </div>
         </article>
-        <article className="bg-gray-600 w-[471px] text-white rounded-xl flex flex-col border border-gray-400 p-10 gap-10">
+        <article className="bg-gray-600 md:w-[471px] text-white rounded-xl flex flex-col border border-gray-400 p-10 gap-10 w-full">
           <p className="text-body-md italic">
             Transformar minha ideia em uma loja online foi fácil e rápido.
             Adorei as opções de personalização e a simplicidade para gerenciar

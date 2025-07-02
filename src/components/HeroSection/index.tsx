@@ -6,8 +6,8 @@ import { ArrowRight, Clock, Store } from "lucide-react";
 export default function HeroSection() {
   return (
     <section className="flex mt-36 items-center gap-14 px-14 justify-between">
-      <div className="flex flex-col items-start text-left gap-14">
-        <div className="flex flex-col gap-8">
+      <div className="flex flex-col items-center md:items-start text-center md:text-left gap-14">
+        <div className="flex flex-col gap-8 items-center md:items-start">
           <h1 className="text-white text-heading-hg max-w-[640px]">
             Venda seus produtos como afiliado em um único lugar
           </h1>
@@ -26,7 +26,7 @@ export default function HeroSection() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-start gap-4">
+        <div className="flex flex-col items-center md:items-start gap-4">
           <Button className="w-full rounded-full">
             Criar loja grátis <ArrowRight />
           </Button>
@@ -40,6 +40,7 @@ export default function HeroSection() {
         src={"/illustrationHero.png"}
         width={500}
         height={500}
+        className="hidden md:flex"
       />
     </section>
   );
