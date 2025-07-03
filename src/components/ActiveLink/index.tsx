@@ -12,6 +12,7 @@ export default function ActiveLink({ ...props }: ActiveLinkProps) {
   const router = useRouter();
 
   const isCurrentPath =
+    router.pathname === props.href ||
     router.asPath === props.href ||
     router.asPath.startsWith(String(props.as)) ||
     router.asPath === props.as;
