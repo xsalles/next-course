@@ -35,7 +35,7 @@ export default function FeatureSection() {
               Tenha uma loja online personalizada com a cara da sua marca
             </h3>
           </div>
-          <Button className="rounded-full w-full md:w-fit">
+          <Button className="w-full md:w-fit">
             Criar loja grátis
             <ArrowRight />
           </Button>

@@ -11,7 +11,7 @@ export default function CtaSection() {
       <h3 className="text-white text-heading-xl md:w-[450px] text-center z-10">
         Crie uma loja online e inicie suas vendas ainda hoje
       </h3>
-      <Button className="rounded-full z-10">
+      <Button className=" z-10">
         Criar loja grátis
         <ArrowRight />
       </Button>

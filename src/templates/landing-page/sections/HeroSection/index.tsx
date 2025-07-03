@@ -27,7 +27,7 @@ export default function HeroSection() {
           </div>
         </div>
         <div className="flex flex-col items-center md:items-start gap-4">
-          <Button className="w-full rounded-full">
+          <Button className="w-full">
             Criar loja grátis <ArrowRight />
           </Button>
           <p className="text-gray-300 text-body-xs">
