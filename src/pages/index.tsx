@@ -1,17 +1,9 @@
-import BenefitsSection from "@/components/BenefitsSection";
-import CtaSection from "@/components/CtaSection";
-import CustomerStorySection from "@/components/CustomerStorySection";
-import FeatureSection from "@/components/FeatureSection";
-import HeroSection from "@/components/HeroSection";
+import LandingPage from "@/templates/landing-page";
 
 export default function Home() {
   return (
     <>
-      <HeroSection />
-      <FeatureSection />
-      <BenefitsSection />
-      <CustomerStorySection />
-      <CtaSection />
+      <LandingPage />
     </>
   );
 }

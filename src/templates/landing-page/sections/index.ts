@@ -1,0 +1,5 @@
+export {default as HeroSection} from './HeroSection'
+export {default as FeatureSection} from './FeatureSection'
+export {default as CustomerStorySection} from './CustomerStorySection'
+export {default as CtaSection} from './CtaSection'
+export {default as BenefitsSection} from './BenefitsSection'
