@@ -57,7 +57,7 @@ export default function Search() {
         className="bg-transparent placeholder:text-body-sm placeholder:text-gray-300"
       />
 
-      {inputRef && (
+      {inputRef.current && inputRef.current?.value.length > 0 && (
         <CircleX
           onClick={deleteSearch}
           className="cursor-pointer text-gray-300 w-4 h-4"
