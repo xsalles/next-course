@@ -4,10 +4,10 @@ export default function PostCard({
   title,
   date,
   description,
-  imageUrl,
+  image,
 }: PostCardProps) {
   return (
-    <article className="flex md:w-[305px] flex-col gap-4 p-2 rounded-xl border border-gray-400 bg-gray-600 w-[95%] relative h-[310px]">
+    <article className="flex md:w-[305px] flex-col gap-4 p-2 rounded-xl border border-gray-400 hover:border-blue-300 transition-colors duration-300 ease-in-out bg-gray-600 w-[95%] relative h-[310px]">
       <div className="absolute top-0 right-0 bg-gray-600 pl-[10px] pb-[6px] pt-[10px] pr-[14px] rounded-[0_11px_0_10px]">
         <p>{date}</p>
       </div>
@@ -15,7 +15,7 @@ export default function PostCard({
       <Image
         className="rounded-md"
         alt={`Imagem do post: ${title}`}
-        src={imageUrl}
+        src={image}
         width={385}
         height={200}
         quality={100}
