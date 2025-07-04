@@ -3,4 +3,5 @@ interface PostCardProps {
     date: string;
     description: string;
     image: string;
+    slug: string;
 }

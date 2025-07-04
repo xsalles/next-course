@@ -1,7 +1,11 @@
-import PostCard from "@/components/PostCard";
 import Search from "@/components/Search";
+import { allPosts } from '.contentlayer/generated'
+import { compareDesc } from 'date-fns'
+import PostCard from "@/components/PostCard";
 
 export default function BlogList() {
+  const posts = allPosts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
+
   return (
     <div className="h-screen items-center flex flex-col mt-20 bg-black text-white px-48 py-20">
       <div className="flex flex-col md:flex-row md:items-end gap-6 item md:justify-between w-full">
@@ -17,12 +21,11 @@ export default function BlogList() {
         <Search />
       </div>
 
-      <PostCard
-        date="20/10/2007"
-        description="Se você está buscando uma maneira simples e eficaz de vender seus produtos online, o Site.Set é a solução perfeita para você. Criar uma loja virtual de sucesso nunca foi tão fácil. Com nossa plataforma intuitiva, você pode criar um site profissional para sua loja em minutos, sem precisar de conhecimentos técnicos."
-        image="/assets/first-post.png"
-        title="Esse é o primeiro post com card"
-      />
+      {
+        posts.map((post, key) => (
+          <PostCard {...post} key={key}/>
+        ))
+      }
     </div>
   );
 }

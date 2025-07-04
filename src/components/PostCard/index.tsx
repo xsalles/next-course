@@ -1,13 +1,15 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function PostCard({
   title,
   date,
   description,
   image,
+  slug,
 }: PostCardProps) {
   return (
-    <article className="flex md:w-[305px] flex-col gap-4 p-2 rounded-xl border border-gray-400 hover:border-blue-300 transition-colors duration-300 ease-in-out bg-gray-600 w-[95%] relative h-[310px]">
+    <Link href={`/blog/${slug}`} className="flex md:w-[305px] flex-col gap-4 p-2 rounded-xl border border-gray-400 hover:border-blue-300 transition-colors duration-300 ease-in-out bg-gray-600 w-[95%] relative h-[310px]">
       <div className="absolute top-0 right-0 bg-gray-600 pl-[10px] pb-[6px] pt-[10px] pr-[14px] rounded-[0_11px_0_10px]">
         <p>{date}</p>
       </div>
@@ -15,7 +17,7 @@ export default function PostCard({
       <Image
         className="rounded-md"
         alt={`Imagem do post: ${title}`}
-        src={image}
+        src={image.trim()}
         width={385}
         height={200}
         quality={100}
@@ -27,6 +29,6 @@ export default function PostCard({
           {description}
         </p>
       </div>
-    </article>
+    </Link>
   );
 }
