@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+import animate from 'tailwindcss-animate'
+import lineClamp from '@tailwindcss/line-clamp'
 
 export default {
   darkMode: ["class"],
@@ -70,5 +72,5 @@ export default {
     },
   },
   // eslint-disable-next-line @typescript-eslint/no-require-imports
-  plugins: [require("tailwindcss-animate")],
+  plugins: [animate, lineClamp],
 } satisfies Config;
