@@ -1,6 +1,6 @@
 import { CircleX, SearchIcon } from "lucide-react";
 import { useRouter } from "next/router";
-import { ChangeEvent, FormEvent, useCallback, useRef } from "react";
+import { FormEvent, useCallback, useRef } from "react";
 
 export default function Search() {
   const router = useRouter();
