@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Avatar from "../Avatar";
 
 export default function PostCard({
   title,
@@ -31,10 +32,10 @@ export default function PostCard({
         </p>
       </div>
 
-      <div className="flex gap-2 border-t border-gray-400 pt-3 mt-3 w-full">
-        <Image src={author.image.trimEnd()} alt={`Ícone do autor do post ${title}`} width={20} height={20} className="rounded-[50%] border border-blue-200" />
-        <p className="text-body-xs text-gray-300">{author.name}</p>
-      </div>
+      <Avatar title={title} author={{
+        name: author.name,
+        image: author.image,
+      }} />
     </Link>
   );
 }
