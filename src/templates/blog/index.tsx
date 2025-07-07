@@ -2,12 +2,16 @@ import Search from "@/components/Search";
 import { allPosts } from '.contentlayer/generated'
 import { compareDesc } from 'date-fns'
 import PostCard from "@/components/PostCard";
+import { CtaSection } from "../landing-page/sections";
 
 export default function BlogList() {
   const posts = allPosts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
 
   return (
-    <div className="h-screen items-center flex flex-col mt-20 bg-black text-white px-48 py-20">
+    <>
+    
+    
+    <div className="items-center flex flex-col mt-20 bg-black text-white px-4 md:px-48 pt-20 mb-32">
       <div className="flex flex-col md:flex-row md:items-end gap-6 item md:justify-between w-full">
         <div className="flex flex-col items-start gap-3">
           <p className="bg-cyan-300 text-cyan-100 px-3 py-2 text-body-xs font-medium rounded-sm w-fit">
@@ -20,12 +24,17 @@ export default function BlogList() {
 
         <Search />
       </div>
-
+     <div className="grid grid-cols-1  md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 mt-10 w-full ">
       {
         posts.map((post, key) => (
           <PostCard {...post} key={key}/>
         ))
       }
+     </div>
+
+
     </div>
+    <CtaSection />
+    </>
   );
 }
