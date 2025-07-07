@@ -9,13 +9,13 @@ export default function PostCard({
   slug,
 }: PostCardProps) {
   return (
-    <Link href={`/blog/${slug}`} className="flex w-full md:w-full flex-col gap-4 p-2 rounded-xl border border-gray-400 hover:border-blue-300 transition-colors duration-300 ease-in-out bg-gray-600 relative h-[310px]">
+    <Link href={`/blog/${slug}`} className="flex w-full md:w-full flex-col gap-4 p-2 rounded-xl border border-gray-400 hover:border-blue-300 transition-colors duration-300 ease-in-out bg-gray-600 relative h-auto">
       <div className="absolute top-0 right-0 bg-gray-600 pl-[10px] pb-[6px] pt-[10px] pr-[14px] rounded-[0_11px_0_10px]">
         <p>{date}</p>
       </div>
 
       <Image
-        className="rounded-md"
+        className="rounded-md w-full"
         alt={`Imagem do post: ${title}`}
         src={image.trim()}
         width={385}
