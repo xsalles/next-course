@@ -7,6 +7,7 @@ export default function PostCard({
   description,
   image,
   slug,
+  author
 }: PostCardProps) {
   return (
     <Link href={`/blog/${slug}`} className="flex w-full md:w-full flex-col gap-4 p-2 rounded-xl border border-gray-400 hover:border-blue-300 transition-colors duration-300 ease-in-out bg-gray-600 relative h-auto">
@@ -28,6 +29,11 @@ export default function PostCard({
         <p className="line-clamp-3 text-ellipsis text-body-xs text-gray-300 w-full overflow-hidden h-full">
           {description}
         </p>
+      </div>
+
+      <div className="flex gap-2 border-t border-gray-400 pt-3 mt-3 w-full">
+        <Image src={author.image.trimEnd()} alt={`Ícone do autor do post ${title}`} width={20} height={20} className="rounded-[50%] border border-blue-200" />
+        <p className="text-body-xs text-gray-300">{author.name}</p>
       </div>
     </Link>
   );

@@ -4,4 +4,8 @@ interface PostCardProps {
     description: string;
     image: string;
     slug: string;
+    author: {
+        name: string;
+        image: string;
+    }
 }
