@@ -14,7 +14,7 @@ export default function PostPage() {
   const slug = router.query.slug;
 
   return (
-    <div className=" mt-20 px-4 md:px-48 h-auto">
+    <div className=" mt-20 px-4 lg:px-48 h-auto">
       <Breadcrumb className="mt-12">
         <BreadcrumbList>
           <BreadcrumbLink href="/blog">
