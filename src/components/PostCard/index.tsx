@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Avatar from "../Avatar";
+import { PostCardProps } from "@/interfaces";
 
 export default function PostCard({
   title,
@@ -32,10 +33,7 @@ export default function PostCard({
         </p>
       </div>
 
-      <Avatar title={title} author={{
-        name: author.name,
-        image: author.image,
-      }} />
+      <Avatar title={title} author={author} />
     </Link>
   );
 }

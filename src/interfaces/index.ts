@@ -1,19 +1,17 @@
-interface PostCardProps {
+import { Author } from "contentlayer/generated";
+
+export interface PostCardProps {
   title: string;
   date: string;
   description: string;
   image: string;
   slug: string;
-  author: {
-    name: string;
-    image: string;
-  };
+  author: Author;
 }
 
-interface AvatarProps {
-  author: {
-    name: string;
-    image: string;
-  };
-  title: string;
+export interface AvatarProps {
+  author: Author | undefined;
+  title: string | undefined;
+  isPostPage?: boolean;
+  date?: string;
 }
