@@ -1,4 +1,5 @@
 import Avatar from "@/components/Avatar";
+import Markdown from "@/components/Markdown";
 import { allPosts } from "contentlayer/generated";
 import Image from "next/image";
 
@@ -25,13 +26,24 @@ export default function ContentPost({
 
       <div className="flex flex-col w-full px-16 py-12">
         <h2 className="text-heading-xl text-white">{post?.title}</h2>
-        <div className="flex items-center gap-3 mt-8">
-          
-          <Avatar isPostPage={true} date={post?.date ? new Date(post?.date).toLocaleDateString('pt-BR') : 'Data não informada'} author={post?.author} title={post?.title}/>
+        <div className="flex items-center gap-3 mt-8 mb-12">
+          <Avatar
+            isPostPage={true}
+            date={
+              post?.date
+                ? new Date(post?.date).toLocaleDateString("pt-BR")
+                : "Data não informada"
+            }
+            author={post?.author}
+            title={post?.title}
+          />
         </div>
 
-        <p className="text-body-md text-white mt-6" dangerouslySetInnerHTML={{ __html: post?.body.html || "Conteúdo não disponível"}} />
-          
+        <div className="prose prose-invert">
+          <Markdown>
+            {post?.body.raw ? post.body.raw : "Conteúdo não disponível."}
+          </Markdown>
+        </div>
       </div>
     </section>
   );

@@ -15,3 +15,7 @@ export interface AvatarProps {
   isPostPage?: boolean;
   date?: string;
 }
+
+export interface MarkdownProps {
+  children: string;
+}
