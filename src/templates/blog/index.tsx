@@ -14,10 +14,12 @@ export default function BlogList() {
     : "Dicas e estratégias para impulsionar seu negócio";
 
   const posts = contentSearched
-    ? allPosts.filter((post) => 
+    ? allPosts.filter((post) =>
         post.title.toLowerCase()?.includes(contentSearched.toLowerCase())
       )
     : allPosts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
+
+  const hasPosts = posts.length > 0;
 
   return (
     <>
@@ -32,11 +34,17 @@ export default function BlogList() {
 
           <Search />
         </div>
-        <div className="grid grid-cols-1  md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 mt-10 w-full ">
-          {posts.map((post, key) => (
-            <PostCard {...post} key={key} />
-          ))}
-        </div>
+        {hasPosts ? (
+          <div className="grid grid-cols-1  md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 mt-10 w-full">
+            {posts.map((post, key) => (
+              <PostCard {...post} key={key} />
+            ))}
+          </div>
+        ) : (
+          <div className="text-center mt-10">
+            <p className="text-body-md">Nenhum resultado encontrado.</p>
+          </div>
+        )}
       </div>
       <CtaSection />
     </>
