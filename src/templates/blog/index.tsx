@@ -1,11 +1,15 @@
 import Search from "@/components/Search";
-import { allPosts } from ".contentlayer/generated";
+import {  Post } from ".contentlayer/generated";
 import { compareDesc } from "date-fns";
 import PostCard from "@/components/PostCard";
 import { CtaSection } from "../landing-page/sections";
 import { useRouter } from "next/router";
 
-export default function BlogList() {
+export interface BlogListProps {
+  posts: Post[];
+}
+
+export default function BlogList({posts}: BlogListProps) {
   const router = useRouter();
   const contentSearched = router.query.post as string;
 
@@ -13,13 +17,13 @@ export default function BlogList() {
     ? `Resultados para "${contentSearched}"`
     : "Dicas e estratégias para impulsionar seu negócio";
 
-  const posts = contentSearched
-    ? allPosts.filter((post) =>
+  const postList = contentSearched
+    ? posts.filter((post) =>
         post.title.toLowerCase()?.includes(contentSearched.toLowerCase())
       )
-    : allPosts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
+    : posts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
 
-  const hasPosts = posts.length > 0;
+  const hasPosts = postList.length > 0;
 
   return (
     <>
@@ -36,7 +40,7 @@ export default function BlogList() {
         </div>
         {hasPosts ? (
           <div className="grid grid-cols-1  md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 mt-10 w-full">
-            {posts.map((post, key) => (
+            {postList.map((post, key) => (
               <PostCard {...post} key={key} />
             ))}
           </div>

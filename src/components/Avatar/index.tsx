@@ -1,6 +1,5 @@
 import { AvatarProps } from "@/interfaces";
 import Image from "next/image";
-import { is } from "node_modules/date-fns/locale/is.cjs";
 import React from "react";
 
 

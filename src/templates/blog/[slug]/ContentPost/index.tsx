@@ -1,17 +1,15 @@
 import Avatar from "@/components/Avatar";
 import Markdown from "@/components/Markdown";
-import { allPosts } from "contentlayer/generated";
+import { Post } from "contentlayer/generated";
 import Image from "next/image";
 
+export interface ContentPostProps {
+  post: Post;
+}
+
 export default function ContentPost({
-  slug,
-}: {
-  slug: string | string[] | undefined;
-}) {
-  const post = allPosts.find(
-    (post) =>
-      post && post.slug.toLowerCase().includes(String(slug).toLowerCase())
-  );
+  post
+}: ContentPostProps) {
 
   return (
     <section className=" w-full md:w-[70%] flex flex-col rounded-xl h-auto bg-gray-600">

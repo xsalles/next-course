@@ -6,12 +6,14 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import ContentPost from "@/templates/blog/[slug]/ContentPost";
+import ContentPost, { ContentPostProps } from "@/templates/blog/[slug]/ContentPost";
+import { allPosts } from "contentlayer/generated";
+import { GetStaticProps } from "next";
 import { useRouter } from "next/router";
 
-export default function PostPage() {
+export default function PostPage(post: ContentPostProps) {
   const router = useRouter();
-
+  
   const slug = router.query.slug;
 
   return (
@@ -33,9 +35,46 @@ export default function PostPage() {
       </Breadcrumb>
 
       <div className="flex w-full flex-col-reverse md:flex-row gap-8 mt-8">
-        <ContentPost slug={slug} />
+        <ContentPost post={post.post}/>
         <Share />
       </div>
     </div>
   );
 }
+
+export const getStaticPaths = (async () => {
+  const sortedPosts = allPosts.sort((a, b) =>
+    new Date(b.date).getTime() - new Date(a.date).getTime()
+);
+
+const recentPosts = sortedPosts.slice(0, 5)
+
+const paths = recentPosts.map((post) => ({
+  params: { slug: post.slug}
+}))
+
+return {
+  paths,
+  fallback: 'blocking'
+}
+})
+
+export const getStaticProps = (async (context) => {
+  const {slug} = context.params as { slug: string}
+
+  const post = allPosts.find(
+    (post) => post && post.slug === slug
+  );
+
+  if (!post) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: {
+      post
+    }
+  }
+}) satisfies GetStaticProps

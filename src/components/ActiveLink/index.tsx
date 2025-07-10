@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import { Url } from "next/dist/shared/lib/router/router";
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
