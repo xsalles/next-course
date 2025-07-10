@@ -1,3 +1,4 @@
+import Share from "@/components/Share";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -10,11 +11,11 @@ import { useRouter } from "next/router";
 
 export default function PostPage() {
   const router = useRouter();
-  
+
   const slug = router.query.slug;
 
   return (
-    <div className=" mt-20 px-4 lg:px-48 h-auto">
+    <div className="mt-20 px-4 lg:px-48 h-auto">
       <Breadcrumb className="mt-12">
         <BreadcrumbList>
           <BreadcrumbLink href="/blog">
@@ -31,7 +32,10 @@ export default function PostPage() {
         </BreadcrumbList>
       </Breadcrumb>
 
-      <ContentPost slug={slug} />
+      <div className="flex w-full flex-col-reverse md:flex-row gap-8 mt-8">
+        <ContentPost slug={slug} />
+        <Share />
+      </div>
     </div>
   );
 }

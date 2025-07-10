@@ -14,7 +14,7 @@ export default function ContentPost({
   );
 
   return (
-    <section className=" w-full md:w-[70%] mt-8 flex flex-col rounded-xl h-auto bg-gray-600">
+    <section className=" w-full md:w-[70%] flex flex-col rounded-xl h-auto bg-gray-600">
       <Image
         src={String(post?.image)}
         alt={post?.title || "Post image"}
