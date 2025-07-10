@@ -16,7 +16,7 @@ export default function ContentPost({
   return (
     <section className=" w-full md:w-[70%] flex flex-col rounded-xl h-auto bg-gray-600">
       <Image
-        src={String(post?.image)}
+        src={post?.image ? post.image : "/default-image.png"}
         alt={post?.title || "Post image"}
         quality={100}
         width={800}
