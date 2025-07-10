@@ -10,7 +10,7 @@ export default function Share() {
       <h5 className="text-heading-xs text-white hidden md:block">
         Compartilhar
       </h5>
-      <article className="flex flex-row md:flex-col md:w-full gap-2">
+      <article className="flex flex-row w-full justify-between md:flex-col md:w-full gap-2">
         {shareButtons.map((button, key) => (
           <Button key={key} variant={"share"} onClick={() => router.push(button.url)}>
             {button.icon}
