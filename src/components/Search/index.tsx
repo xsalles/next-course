@@ -1,10 +1,10 @@
 import { CircleX, SearchIcon } from "lucide-react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { FormEvent, useCallback, useRef } from "react";
 
 export default function Search() {
-  const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
+  const router = useRouter();
 
   const handleSearch = useCallback(
     (event: FormEvent) => {
@@ -16,16 +16,14 @@ export default function Search() {
         );
       }
     },
-    [inputRef, router]
+    [inputRef]
   );
 
   function handleQueryChange() {
     if (inputRef.current) {
       router.push(
         `/blog?post=${encodeURIComponent(inputRef.current.value)}`,
-        undefined,
         {
-          shallow: true,
           scroll: false,
         }
       );
@@ -37,8 +35,7 @@ export default function Search() {
       inputRef.current.value = "";
     }
 
-    router.push("/blog", undefined, {
-      shallow: true,
+    router.push("/blog", {
       scroll: false,
     });
   }

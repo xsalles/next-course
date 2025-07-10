@@ -1,17 +1,20 @@
+'use client'
+
 import Search from "@/components/Search";
 import {  Post } from ".contentlayer/generated";
 import { compareDesc } from "date-fns";
 import PostCard from "@/components/PostCard";
 import { CtaSection } from "../landing-page/sections";
-import { useRouter } from "next/router";
+import { useSearchParams } from "next/navigation";
 
 export interface BlogListProps {
   posts: Post[];
 }
 
 export default function BlogList({posts}: BlogListProps) {
-  const router = useRouter();
-  const contentSearched = router.query.post as string;
+  const searchParams = useSearchParams()
+
+  const contentSearched = searchParams?.get("q") || "";
 
   const pageTitle = contentSearched
     ? `Resultados para "${contentSearched}"`

@@ -1,3 +1,5 @@
+'use client'
+
 import Share from "@/components/Share";
 import {
   Breadcrumb,
@@ -8,13 +10,22 @@ import {
 } from "@/components/ui/breadcrumb";
 import ContentPost, { ContentPostProps } from "@/templates/blog/[slug]/ContentPost";
 import { allPosts } from "contentlayer/generated";
-import { GetStaticProps } from "next";
-import { useRouter } from "next/router";
 
-export default function PostPage(post: ContentPostProps) {
-  const router = useRouter();
+interface PageProps {
+    params: { slug: string };
+}
+
+export default function PostPage({params}: PageProps) {
+
+    console.log("Params:", params)
+    console.log("All Posts:", allPosts)
+  const slug = params.slug
+
+  console.log("Slug:", slug)
   
-  const slug = router.query.slug;
+  const post = allPosts.find((post) => post.slug === decodeURIComponent(slug));
+
+  console.log("Post:", post)
 
   return (
     <div className="mt-20 px-4 lg:px-48 h-auto">
@@ -28,53 +39,22 @@ export default function PostPage(post: ContentPostProps) {
           <BreadcrumbSeparator className="text-gray-300" />
           <BreadcrumbLink href={`/blog/${slug}`}>
             <BreadcrumbItem className="text-body-md text-blue-200 font-medium">
-              {slug}
+              {post ? post.title : "Carregando..."}
             </BreadcrumbItem>
           </BreadcrumbLink>
         </BreadcrumbList>
       </Breadcrumb>
 
       <div className="flex w-full flex-col-reverse md:flex-row gap-8 mt-8">
-        <ContentPost post={post.post}/>
+        {
+            post ? (
+                <ContentPost post={post}/>
+            ) : (
+                <p>Carregando</p>
+            )
+        }
         <Share />
       </div>
     </div>
   );
 }
-
-export const getStaticPaths = (async () => {
-  const sortedPosts = allPosts.sort((a, b) =>
-    new Date(b.date).getTime() - new Date(a.date).getTime()
-);
-
-const recentPosts = sortedPosts.slice(0, 5)
-
-const paths = recentPosts.map((post) => ({
-  params: { slug: post.slug}
-}))
-
-return {
-  paths,
-  fallback: 'blocking'
-}
-})
-
-export const getStaticProps = (async (context) => {
-  const {slug} = context.params as { slug: string}
-
-  const post = allPosts.find(
-    (post) => post && post.slug === slug
-  );
-
-  if (!post) {
-    return {
-      notFound: true,
-    };
-  }
-
-  return {
-    props: {
-      post
-    }
-  }
-}) satisfies GetStaticProps

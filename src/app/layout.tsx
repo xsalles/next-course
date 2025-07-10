@@ -11,7 +11,7 @@ const interFont = Inter({
   subsets: ['latin'],
 })
 
-export default function Layout({ children }: LayoutProps) {
+export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
       <head />

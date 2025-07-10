@@ -7,7 +7,7 @@ export default function Avatar({author, title, isPostPage, date}: AvatarProps) {
   return (
     <div className="flex gap-2 border-t border-gray-400 pt-3 mt-3 w-full">
       <Image
-        src={author ? author.image.trimEnd() : ''}
+        src={author ? author.image.trimEnd() : '/default-author.png'}
         alt={`Ícone do autor do post ${title}`}
         width={isPostPage ? 36 : 20}
         height={isPostPage ? 36 : 20}

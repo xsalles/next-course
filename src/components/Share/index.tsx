@@ -1,6 +1,6 @@
 import { Button } from "../ui/button";
 import { shareButtons } from "./data";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 export default function Share() {
 

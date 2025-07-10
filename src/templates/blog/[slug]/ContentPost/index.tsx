@@ -5,6 +5,7 @@ import Image from "next/image";
 
 export interface ContentPostProps {
   post: Post;
+  params?: {slug: string}
 }
 
 export default function ContentPost({
